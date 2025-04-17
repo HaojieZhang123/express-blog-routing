@@ -14,7 +14,13 @@ router.get('/', (req, res) => {
 // get post by id
 router.get('/:id', (req, res) => {
     const postId = req.params.id;
-    res.send(`post con id ${postId}`);
+    const post = posts.find(p => p.id == postId);
+    if (!post) {
+        res.send('Post non trovato');
+    }
+    else{
+        res.send(post);
+    }
 });
 
 // create a new post
