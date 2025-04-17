@@ -8,7 +8,7 @@ const posts = require('../posts');
 
 // get all posts
 router.get('/', (req, res) => {
-    res.send(posts);
+    res.json(posts);
 });
 
 // get post by id
@@ -19,7 +19,7 @@ router.get('/:id', (req, res) => {
         res.send('Post non trovato');
     }
     else{
-        res.send(post);
+        res.json(post);
     }
 });
 
