@@ -3,15 +3,18 @@ const express = require('express');
 // router class
 const router = express.Router();
 
+// importing posts array
+const posts = require('../posts');
+
 // get all posts
 router.get('/', (req, res) => {
-    res.send('Lista dei post');
+    res.send(posts);
 });
 
 // get post by id
 router.get('/:id', (req, res) => {
     const postId = req.params.id;
-    res.send(`Post con id ${postId}`);
+    res.send(`post con id ${postId}`);
 });
 
 // create a new post

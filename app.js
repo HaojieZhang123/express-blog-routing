@@ -3,6 +3,9 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+// importing posts array
+const posts = require('./posts');
+
 app.use(express.static('public'));
 // router
 const postsRouter = require('./routers/posts');
