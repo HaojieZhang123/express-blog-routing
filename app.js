@@ -6,6 +6,7 @@ const port = 3000;
 app.use(express.static('public'));
 // router
 const postsRouter = require('./routers/posts');
+app.use('/posts', postsRouter);
 
 // base route
 app.get('/', (req, res) => {
